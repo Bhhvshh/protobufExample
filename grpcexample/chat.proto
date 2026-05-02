@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package chat;
+
+// Message sent between clients
+message ChatMessage {
+  string user = 1;
+  string message = 2;
+}
+
+// Empty request for starting stream
+message Empty {}
+
+service ChatService {
+  // Bi-directional streaming RPC
+  rpc ChatStream(stream ChatMessage) returns (stream ChatMessage);
+}

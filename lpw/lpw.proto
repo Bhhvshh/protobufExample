@@ -1,0 +1,2 @@
+
+create simple grpc client and server that has simple communication. grpc server writes some different messages in mongodb and a cdc tool reads listens mongodb changes and write them to a queue. grpc client also reads from queue(message broker).

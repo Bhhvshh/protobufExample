@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package chat;
+
+option go_package = "example.com/grpcdemo/chat;chat";
+
+// Chat service definition
+service ChatService {
+  // Bi-directional streaming
+  rpc Chat (stream ChatMessage) returns (stream ChatMessage);
+}
+
+// Chat message format
+message ChatMessage {
+  string user = 1;
+  string message = 2;
+}

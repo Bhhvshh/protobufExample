@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package message;
+option go_package = "proto/message";
+
+service MessageService {
+    rpc SendMessage (Message) returns (Response) {}
+}
+
+message Message {
+    string id = 1;
+    string content = 2;
+    int64 timestamp = 3;
+}
+
+message Response {
+    string status = 1;
+    string message = 2;
+}
